@@ -1,0 +1,19 @@
+[
+    {
+        "action": "symlink",
+        "params": [
+            {
+                "source": "src/env.txt",
+                "destination": "~/.zshenv"
+            },
+            {
+                "source": "src/config.zsh",
+                "destination": "~/.config/zsh/.zshrc"
+            },
+            {
+                "source": "src/utils",
+                "destination": "~/.config/zsh/utils"
+            }
+        ]
+    }
+]

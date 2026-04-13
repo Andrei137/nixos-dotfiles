@@ -1,0 +1,3 @@
+[submodule "dotfiles/.devbox/src"]
+	path = dotfiles/.devbox/src
+	url = https://github.com/Andrei137/devbox-backup

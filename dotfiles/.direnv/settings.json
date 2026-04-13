@@ -1,0 +1,11 @@
+[
+    {
+        "action": "symlink",
+        "params": [
+            {
+                "source": "src/config.toml",
+                "destination": "~/.config/direnv/direnv.toml"
+            }
+        ]
+    }
+]

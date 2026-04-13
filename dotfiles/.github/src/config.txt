@@ -1,0 +1,17 @@
+[user]
+	name = Andrei137
+	email = andrei.fabian188@gmail.com
+[init]
+	defaultBranch = main
+[color]
+	ui = auto
+[core]
+	editor = nvim
+	autocrlf = false
+	eol = lf
+	pager = less -FX
+	safecrlf = true
+[pull]
+	rebase = true
+[credential]
+	helper = !/home/andrei13/.local/share/devbox/global/default/.devbox/nix/profile/default/bin/gh auth git-credential
