@@ -140,8 +140,6 @@
   programs.firefox.enable = true;
   programs.zsh.enable = true;
 
-  programs.git.config.init.defaultBranch = "main";
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
