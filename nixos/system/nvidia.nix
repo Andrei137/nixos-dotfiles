@@ -1,20 +1,18 @@
 { config, pkgs, ...}:
 {
-  # Nvidia
-  hardware.nvidia = {
-    open = false;
-    nvidiaSettings = true;
-    modesetting.enable = true;
-  };
+    hardware.nvidia = {
+        open = false;
+        nvidiaSettings = true;
+        modesetting.enable = true;
+    };
 
-  hardware.graphics = {
-    enable = true;
-  };
+    hardware.graphics = {
+      enable = true;
+    };
 
-  boot.kernelModules = [ "nvidia-uvm" ];
-  
-  hardware.nvidia-container-toolkit.enable = true;
+    boot.kernelModules = [ "nvidia-uvm" ];
 
-  services.xserver.videoDrivers = [ "nvidia" ];
+    hardware.nvidia-container-toolkit.enable = true;
 
+    services.xserver.videoDrivers = [ "nvidia" ];
 }
