@@ -30,7 +30,7 @@
             home-manager.useUserPackages = true;
           }
 
-	  inputs.lanzaboote.nixosModules.lanzaboote
+	        inputs.lanzaboote.nixosModules.lanzaboote
           ({ pkgs, lib, ... }: {
             environment.systemPackages = with pkgs; [
               sbctl
