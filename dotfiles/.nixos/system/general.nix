@@ -10,7 +10,7 @@
         };
     };
 
-    networking.hostName = "main";
+    networking.hostName = "legion";
 
     # Enable networking
     networking.networkmanager.enable = true;
