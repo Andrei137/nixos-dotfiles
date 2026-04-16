@@ -6,6 +6,11 @@
             url = "github:nixos/nixpkgs/nixos-unstable";
         };
 
+        # https://nixos-and-flakes.thiscute.world/nixos-with-flakes/nixos-flake-and-module-system
+        helix = {
+            url = "github:helix-editor/helix/master";
+        };
+
         # https://nix-community.github.io/home-manager/
         home-manager = {
             url = "github:nix-community/home-manager";
@@ -22,6 +27,7 @@
     outputs = inputs: {
         nixosConfigurations = {
             legion = inputs.nixpkgs.lib.nixosSystem {
+                specialArgs = { inherit inputs; };
                 modules = [
                     ./configuration.nix
                     inputs.home-manager.nixosModules.home-manager
