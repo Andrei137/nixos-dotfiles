@@ -1,4 +1,4 @@
-{ config, pkgs, inputs ... }:
+{ config, pkgs, inputs, ... }:
 {
     programs.firefox.enable = true;
     programs.zsh.enable = true;
