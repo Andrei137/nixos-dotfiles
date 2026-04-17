@@ -1,5 +1,7 @@
-_: {
-    flake.modules.nixos.legion = {
+let
+    host = builtins.baseNameOf ./.;
+in {
+    flake.modules.nixos.${host} = {
         config,
         lib,
         modulesPath,

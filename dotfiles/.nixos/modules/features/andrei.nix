@@ -1,4 +1,4 @@
-_: {
+{
     flake.modules.nixos.andrei = {pkgs, ...}: {
         users.users.andrei = {
             isNormalUser = true;
