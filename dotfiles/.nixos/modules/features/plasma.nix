@@ -1,5 +1,5 @@
 {
-    flake.nixosModules.plasma = {
+    flake.modules.nixos.plasma = {
         services.xserver.enable = true;
 
         # Enable the KDE Plasma Desktop Environment.

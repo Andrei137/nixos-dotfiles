@@ -1,5 +1,5 @@
 {
-    flake.nixosModules.settings = {
+    flake.modules.nixos.settings = {
         # Bootloader.
         boot.loader = {
             efi.canTouchEfiVariables = true;

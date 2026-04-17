@@ -1,5 +1,5 @@
 { inputs, ... }: {
-    flake.nixosModules.lanzaboote = { pkgs, lib, ... }: {
+    flake.modules.nixos.lanzaboote = { pkgs, lib, ... }: {
         environment.systemPackages = with pkgs; [
             sbctl
         ];

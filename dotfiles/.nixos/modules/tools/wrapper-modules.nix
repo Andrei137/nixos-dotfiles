@@ -3,8 +3,8 @@
         inputs.wrapper-modules.flakeModules.wrappers
     ];
 
-    options.flake.modules = inputs.flake-parts.lib.mkSubmoduleOptions {
-        wrappers = inputs.nixpkgs.lib.mkOption {
+    options.flake = inputs.flake-parts.lib.mkSubmoduleOptions {
+        wrappersModules = inputs.nixpkgs.lib.mkOption {
             default = {};
         };
     };

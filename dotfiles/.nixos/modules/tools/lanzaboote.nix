@@ -4,7 +4,7 @@
         lanzaboote.inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    flake.nixosModules.lanzaboote = {
+    flake.modules.nixos.lanzaboote = {
         imports = [
             inputs.lanzaboote.nixosModules.lanzaboote
         ];

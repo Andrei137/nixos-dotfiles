@@ -1,5 +1,5 @@
 {
-    flake.nixosModules.apps = {pkgs, ...}: {
+    flake.modules.nixos.apps = {pkgs, ...}: {
         programs.firefox.enable = true;
         programs.zsh.enable = true;
 

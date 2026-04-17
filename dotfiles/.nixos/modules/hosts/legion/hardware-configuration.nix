@@ -1,5 +1,5 @@
 { self, inputs, ... }: {
-    flake.nixosModules.legion = { config, lib, pkgs, modulesPath, ... }: {
+    flake.modules.nixos.legion = { config, lib, pkgs, modulesPath, ... }: {
         imports =
             [ (modulesPath + "/installer/scan/not-detected.nix")
             ];

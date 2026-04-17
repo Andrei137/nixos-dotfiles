@@ -1,13 +1,12 @@
 { self, inputs, lib, ... }: {
     flake.nixosConfigurations.legion = inputs.nixpkgs.lib.nixosSystem {
-        modules = [
-            self.nixosModules.legion
-            { nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux"; }
+        modules = with self.modules.nixos; [
+            legion
         ];
     };
 
-    flake.nixosModules.legion = {
-        imports = with self.nixosModules; [
+    flake.modules.nixos.legion = {
+        imports = with self.modules.nixos; [
             lanzaboote
             plasma
             nvidia
