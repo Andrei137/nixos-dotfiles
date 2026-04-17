@@ -1,14 +1,20 @@
-{ config, pkgs, ... }:
-{
-    imports = [
-        ../../system/nvidia.nix
-        ../../system/kde-plasma.nix
-        ../../system/packages.nix
-        ../../system/general.nix
-        ../../system/sound.nix
+{ self, inputs, lib, ... }: {
+    flake.nixosConfigurations.legion = inputs.nixpkgs.lib.nixosSystem {
+        modules = [
+            self.nixosModules.legion
+            { nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux"; }
+        ];
+    };
 
-        ../../users/andrei.nix
-
-        ./hardware-configuration.nix
-    ];
+    flake.nixosModules.legion = {
+        imports = [
+            self.nixosModules.lanzaboote
+            self.nixosModules.plasma
+            self.nixosModules.nvidia
+            self.nixosModules.apps
+            self.nixosModules.settings
+            self.nixosModules.sound
+            self.nixosModules.andrei
+        ];
+    };
 }

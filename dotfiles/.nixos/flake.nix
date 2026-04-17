@@ -1,6 +1,4 @@
 {
-    description = "NixOS configuration";
-
     inputs = {
         nixpkgs = {
             url = "github:nixos/nixpkgs/nixos-unstable";
@@ -11,17 +9,12 @@
             url = "github:nix-community/lanzaboote/v1.0.0";
             inputs.nixpkgs.follows = "nixpkgs";
         }; 
+
+        flake-parts.url = "github:hercules-ci/flake-parts";
+        import-tree.url = "github:vic/import-tree";
     };
 
-    outputs = inputs: {
-        nixosConfigurations = {
-            legion = inputs.nixpkgs.lib.nixosSystem {
-                specialArgs = { inherit inputs; };
-                modules = [
-                    ./modules/hosts/legion/configuration.nix
-                    ./modules/lanzaboote/lanzaboote.nix
-                ];
-            };
-        };
-    };
+    outputs = inputs: inputs.flake-parts.lib.mkFlake
+        { inherit inputs; }
+        (inputs.import-tree ./modules);
 }
