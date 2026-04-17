@@ -1,16 +1,15 @@
-{ inputs, ... }:
-{
+_: {
     flake.modules.nixos.andrei = {pkgs, ...}: {
         users.users.andrei = {
             isNormalUser = true;
             description = "Andrei";
-            extraGroups = [ "networkmanager" "wheel" ];
+            extraGroups = ["networkmanager" "wheel"];
             packages = with pkgs; [
                 wezterm
                 devbox
                 discord
                 telegram-desktop
-                kdePackages.kate 
+                kdePackages.kate
             ];
             shell = pkgs.zsh;
         };

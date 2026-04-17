@@ -7,13 +7,13 @@
         };
 
         hardware.graphics = {
-          enable = true;
+            enable = true;
         };
 
-        boot.kernelModules = [ "nvidia-uvm" ];
+        boot.kernelModules = ["nvidia-uvm"];
 
         hardware.nvidia-container-toolkit.enable = true;
 
-        services.xserver.videoDrivers = [ "nvidia" ];
+        services.xserver.videoDrivers = ["nvidia"];
     };
 }
