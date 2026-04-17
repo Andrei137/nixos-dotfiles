@@ -1,20 +1,20 @@
+# DO-NOT-EDIT. This file was auto-generated using github:vic/flake-file.
+# Use `nix run .#write-flake` to regenerate it.
 {
-    inputs = {
-        nixpkgs = {
-            url = "github:nixos/nixpkgs/nixos-unstable";
-        };
+  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
 
-        # https://nix-community.github.io/lanzaboote/introduction.html
-        lanzaboote = {
-            url = "github:nix-community/lanzaboote/v1.0.0";
-            inputs.nixpkgs.follows = "nixpkgs";
-        }; 
-
-        flake-parts.url = "github:hercules-ci/flake-parts";
-        import-tree.url = "github:vic/import-tree";
+  inputs = {
+    flake-file.url = "github:vic/flake-file";
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
     };
-
-    outputs = inputs: inputs.flake-parts.lib.mkFlake
-        { inherit inputs; }
-        (inputs.import-tree ./modules);
+    import-tree.url = "github:vic/import-tree";
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v1.0.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixpkgs.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.xz";
+    wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
+  };
 }

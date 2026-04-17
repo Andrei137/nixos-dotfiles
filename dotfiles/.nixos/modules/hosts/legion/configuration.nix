@@ -7,14 +7,14 @@
     };
 
     flake.nixosModules.legion = {
-        imports = [
-            self.nixosModules.lanzaboote
-            self.nixosModules.plasma
-            self.nixosModules.nvidia
-            self.nixosModules.apps
-            self.nixosModules.settings
-            self.nixosModules.sound
-            self.nixosModules.andrei
+        imports = with self.nixosModules; [
+            lanzaboote
+            plasma
+            nvidia
+            apps
+            settings
+            sound
+            andrei
         ];
     };
 }
