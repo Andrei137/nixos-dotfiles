@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 START_DIR="$PWD"
 pushd ../../scripts > /dev/null

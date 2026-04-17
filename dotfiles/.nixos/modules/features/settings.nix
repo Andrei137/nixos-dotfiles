@@ -1,15 +1,5 @@
 {
     flake.modules.nixos.settings = {
-        # Bootloader.
-        boot.loader = {
-            efi.canTouchEfiVariables = true;
-            systemd-boot = {
-                enable = true;
-                consoleMode = "max";
-                configurationLimit = 5;
-            };
-        };
-
         # Enable networking
         networking.networkmanager.enable = true;
 
