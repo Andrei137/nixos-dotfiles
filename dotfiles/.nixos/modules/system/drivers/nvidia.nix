@@ -7,16 +7,25 @@
                 powerManagement.enable = true;
                 modesetting.enable = true;
                 package = config.boot.kernelPackages.nvidiaPackages.latest;
-            };
-
-            graphics = {
-                enable = true;
-                enable32Bit = true;
+                forceFullCompositionPipeline = true;
             };
 
             nvidia-container-toolkit.enable = true;
         };
 
         services.xserver.videoDrivers = ["nvidia"];
+
+        boot = {
+            kernelParams = [
+                "nvidia-drm.modeset=1"
+            ];
+            initrd.kernelModules = [
+                "nvidia"
+                "nvidia_modeset"
+                "nvidia_uvm"
+                "nvidia_drm"
+            ];
+            extraModulePackages = [config.boot.kernelPackages.nvidia_x11];
+        };
     };
 }

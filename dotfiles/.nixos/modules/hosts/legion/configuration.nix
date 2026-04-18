@@ -5,19 +5,10 @@ in {
 
     flake.modules.nixos.${host} = {
         imports = with self.modules.nixos; [
-            bluetooth
-            boot
-            coreutils
-            fonts
-            lanzaboote
-            locales
-            networking
-            nix
-            nvidia
+            general
+
             plasma
-            sddm
-            sound
-            touchpad
+            nvidia
             andrei
         ];
 
