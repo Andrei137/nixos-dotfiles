@@ -1,7 +1,7 @@
 let
     host = builtins.baseNameOf ./.;
 in {
-    flake.modules.nixos.${host} = { lib, ... }: {
+    flake.modules.nixos.${host} = {lib, ...}: {
         boot.initrd.availableKernelModules = ["sd_mod" "sr_mod"];
         boot.initrd.kernelModules = [];
         boot.kernelModules = [];

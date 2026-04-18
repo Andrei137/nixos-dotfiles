@@ -1,3 +1,0 @@
-{
-    flake.wallpaper = ./desktop.jpg;
-}

@@ -1,4 +1,4 @@
-{ self, ... }: let
+{self, ...}: let
     host = builtins.baseNameOf ./.;
 in {
     flake.nixosConfigurations = self.lib.mkNixos host;

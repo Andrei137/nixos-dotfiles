@@ -14,6 +14,10 @@
             url = "github:nix-community/lanzaboote/v1.0.0";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+        nix-index-database = {
+            url = "github:Mic92/nix-index-database";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
         nixpkgs.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.xz";
         treefmt-nix = {
             url = "github:numtide/treefmt-nix";

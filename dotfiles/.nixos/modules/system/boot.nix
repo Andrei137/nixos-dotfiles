@@ -1,13 +1,13 @@
 {
     flake.modules.nixos.boot = {
         boot = {
-             kernelParams = [
-                 "quiet"
-                 "splash"
-                 "boot.shell_on_fail"
-                 "udev.log_priority"
-                 "rd.systemd.show_status=auto"
-                 "nvidia-drm.modeset=1"
+            kernel.sysctl."kernel.sysrq" = 1;
+            kernelParams = [
+                "splash"
+                "boot.shell_on_fail"
+                "udev.log_priority"
+                "rd.systemd.show_status=auto"
+                "nvidia-drm.modeset=1"
             ];
 
             initrd.kernelModules = [
@@ -33,4 +33,3 @@
         };
     };
 }
-

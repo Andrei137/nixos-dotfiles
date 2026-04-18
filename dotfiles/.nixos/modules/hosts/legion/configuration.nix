@@ -1,4 +1,4 @@
-{ self, ... }: let
+{self, ...}: let
     host = builtins.baseNameOf ./.;
 in {
     flake.nixosConfigurations = self.lib.mkNixos host;
@@ -7,15 +7,20 @@ in {
         imports = with self.modules.nixos; [
             bluetooth
             boot
+            coreutils
+            fonts
             lanzaboote
+            locales
+            networking
+            nix
             nvidia
             plasma
+            sddm
             sound
-
-            settings
-
-            apps
+            touchpad
             andrei
         ];
+
+        system.stateVersion = "25.11";
     };
 }
