@@ -1,15 +1,13 @@
 {self, ...}: {
-    flake.modules.nixos.general = {
+    flake.modules.nixos.base = {
         imports = with self.modules.nixos; [
-            boot
             services
-
+            plasma
+            sddm
             fonts
-            graphics
             locales
             nix
             shell
         ];
     };
 }
-

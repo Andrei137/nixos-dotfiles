@@ -7,11 +7,9 @@
         inputs.flake-file.flakeModules.dendritic
     ];
 
-    options.flake = {
-        lib = lib.mkOption {
-            type = lib.types.attrsOf lib.types.unspecified;
-            default = {};
-        };
+    options.flake.lib = lib.mkOption {
+        default = {};
+        type = lib.types.attrsOf lib.types.unspecified;
     };
 
     config.flake.lib = {

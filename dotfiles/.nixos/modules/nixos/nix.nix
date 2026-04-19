@@ -1,4 +1,4 @@
-{ inputs, ... }: {
+{inputs, ...}: {
     flake-file.inputs.nix-index-database = {
         url = "github:Mic92/nix-index-database";
         inputs.nixpkgs.follows = "nixpkgs";
@@ -17,7 +17,7 @@
             };
 
             settings = {
-                experimental-features = ["nix-command" "flakes"];
+                experimental-features = ["nix-command" "flakes" "pipe-operators"];
                 trusted-users = ["root"];
                 auto-optimise-store = true;
                 warn-dirty = false;

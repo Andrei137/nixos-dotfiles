@@ -5,10 +5,16 @@ in {
 
     flake.modules.nixos.${host} = {
         imports = with self.modules.nixos; [
-            general
+            base
 
-            plasma
+            # gpu
             nvidia
+
+            # boot
+            systemd-boot
+            lanzaboote
+
+            # user
             andrei
         ];
 
