@@ -7,12 +7,15 @@ in {
         imports = with self.modules.nixos; [
             base
 
+            # boot
+            systemd-boot
+
             # gpu
             nvidia
 
-            # boot
-            systemd-boot
-            lanzaboote
+            # desktop
+            plasma
+            sddm
 
             # user
             andrei

@@ -1,22 +1,22 @@
-{self, ...}: {
-    flake.modules.nixos.options = {lib, ...}: let
-        categories = ["gpu" "boot"];
-
-        generatedOptions = lib.genAttrs categories (name:
-            lib.mkOption {
-                type = lib.types.listOf (lib.types.enum (self.lib.readDirs ./${name}));
-                default = [];
-                description = "${name} options";
-            });
-    in {
-        options.systemProperties =
-            generatedOptions
-            // {
-                "secure-boot" = lib.mkOption {
-                    type = lib.types.bool;
-                    default = false;
-                    description = "secure boot";
-                };
+_: {
+    flake.modules.nixos.base = {lib, ...}: {
+        options.settings = {
+            secureBoot = lib.mkOption {
+                type = lib.types.bool;
+                default = true;
             };
+            maxGenerations = lib.mkOption {
+                type = lib.types.int;
+                default = 3;
+            };
+            locale = lib.mkOption {
+                type = lib.types.str;
+                default = "en_US.UTF-8";
+            };
+            timezone = lib.mkOption {
+                type = lib.types.str;
+                default = "Europe/Bucharest";
+            };
+        };
     };
 }

@@ -1,9 +1,13 @@
-_: {
-    flake.modules.nixos.systemd-boot = {
+{self, ...}: {
+    flake.modules.nixos.systemd-boot = {config, ...}: {
+        imports = with self.modules.nixos; [
+            lanzaboote
+        ];
+
         boot.loader.systemd-boot = {
             enable = true;
             consoleMode = "max";
-            configurationLimit = 3;
+            configurationLimit = config.settings.maxGenerations;
         };
     };
 }

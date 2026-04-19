@@ -12,6 +12,7 @@
             (pkgs.writeTextDir "share/sddm/themes/${theme}/theme.conf.user" ''
                 [General]
                 background = "${self.packages.${pkgs.stdenv.hostPlatform.system}.wallpaper}/wallpaper.jpg"
+                type=image
             '')
         ];
     };
