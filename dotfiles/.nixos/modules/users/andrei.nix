@@ -9,7 +9,6 @@
                 devbox
                 discord
                 telegram-desktop
-                kdePackages.kate
             ];
             shell = pkgs.zsh;
         };

@@ -23,5 +23,13 @@
                 ];
             };
         };
+
+        mkModuleOption = module:
+            lib.mkEnableOption "enable ${module}"
+            // {
+                default = true;
+            };
+
+        fileName = file: file |> builtins.baseNameOf |> lib.removeSuffix ".nix";
     };
 }

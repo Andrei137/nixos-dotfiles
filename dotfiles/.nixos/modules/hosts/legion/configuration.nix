@@ -3,24 +3,16 @@
 in {
     flake.nixosConfigurations = self.lib.mkNixos host;
 
-    flake.modules.nixos.${host} = {
+    flake.modules.nixos.${host} = {...}: {
         imports = with self.modules.nixos; [
-            base
-
-            # boot
-            systemd-boot
-
-            # gpu
-            nvidia
-
-            # desktop
-            plasma
-            sddm
-
-            # user
+            system-desktop
             andrei
         ];
 
-        system.stateVersion = "25.11";
+        bootloader.limine.enable = true;
+        core.touchpad.enable = true;
+        display-manager.ly.enable = true;
+        desktop-environment.plasma.enable = true;
+        graphics.nvidia.enable = true;
     };
 }
