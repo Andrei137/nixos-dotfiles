@@ -14,7 +14,7 @@ export EDITOR="nvim"
 source $HOME/.config/zsh/zsh-defer/zsh-defer.plugin.zsh
 
 # oh my zsh
-export OH_MY_ZSH="$HOME/.oh-my-zsh"
+export OH_MY_ZSH="$HOME/.config/zsh/oh-my-zsh"
 ZSH_THEME="robbyrussell"
 plugins=(
   git

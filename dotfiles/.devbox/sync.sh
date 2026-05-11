@@ -17,7 +17,7 @@ pushd src
 if [[ ! -d .git ]]; then
     git init
     git remote add origin "$REPO"
-    git pull
+    git pull origin main
 fi
 if [[ "$ACTION" == "import" ]]; then
     git pull origin main

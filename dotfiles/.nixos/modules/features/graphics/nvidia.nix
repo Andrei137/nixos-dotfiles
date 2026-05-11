@@ -12,11 +12,11 @@ in {
         config = lib.mkIf config.${module}.${feature}.enable {
             hardware = {
                 nvidia = {
-                    open = false;
+                    open = true;
                     nvidiaSettings = true;
                     powerManagement.enable = true;
                     modesetting.enable = true;
-                    package = config.boot.kernelPackages.nvidiaPackages.latest;
+                    package = config.boot.kernelPackages.nvidiaPackages.stable;
                     forceFullCompositionPipeline = true;
                 };
 
